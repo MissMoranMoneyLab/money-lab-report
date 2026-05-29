@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>פרסונות נשים — פריזמה פיננסית</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FAF7F2;
+  --text: #2D2A26;
+  --text-light: #6B6560;
+  --card-bg: #FFFFFF;
+  --border: #E8E2DA;
+  --tag-bg: #F0EBE3;
+  --a1: #C4956A;
+  --a2: #7B9E87;
+  --a3: #8B7EB8;
+  --a4: #D4827E;
+  --a5: #5B8FAF;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Heebo', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  padding: 32px 24px 60px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.intro {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+.intro h1 {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+.intro p {
+  font-size: 14px;
+  color: var(--text-light);
+  font-weight: 300;
+}
+.persona-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+.persona-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
+.persona-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 5px; height: 100%;
+}
+.persona-card:nth-child(1)::before { background: var(--a1); }
+.persona-card:nth-child(2)::before { background: var(--a2); }
+.persona-card:nth-child(3)::before { background: var(--a3); }
+.persona-card:nth-child(4)::before { background: var(--a4); }
+.persona-card:nth-child(5)::before { background: var(--a5); }
+
+.persona-card:nth-child(1) .pnum { color: var(--a1); }
+.persona-card:nth-child(2) .pnum { color: var(--a2); }
+.persona-card:nth-child(3) .pnum { color: var(--a3); }
+.persona-card:nth-child(4) .pnum { color: var(--a4); }
+.persona-card:nth-child(5) .pnum { color: var(--a5); }
+
+.persona-card:nth-child(1) .quote-block { border-right-color: var(--a1); }
+.persona-card:nth-child(2) .quote-block { border-right-color: var(--a2); }
+.persona-card:nth-child(3) .quote-block { border-right-color: var(--a3); }
+.persona-card:nth-child(4) .quote-block { border-right-color: var(--a4); }
+.persona-card:nth-child(5) .quote-block { border-right-color: var(--a5); }
+
+.pnum {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  body { padding: 20px 14px 40px; }
+  .persona-card { padding: 22px; }
+  .intro h1 { font-size: 22px; }
+}
+.block {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.block-label {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.4px;
+  color: var(--text-light);
+  margin-bottom: 7px;
+}
+.block-content {
+  font-size: 13.5px;
+  color: var(--text);
+  font-weight: 400;
+}
+.block-content ul { list-style: none; padding: 0; }
+.block-content li {
+  padding: 2px 0;
+  position: relative;
+  padding-right: 14px;
+}
+.block-content li::before {
+  content: '·'; position: absolute; right: 0;
+  font-weight: 900; color: var(--text-light);
+}
+.full { grid-column: 1 / -1; }
+.tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 3px; }
+.tag {
+  background: var(--tag-bg);
+  border-radius: 20px;
+  padding: 3px 13px;
+  font-size: 12px;
+  color: var(--text);
+  white-space: nowrap;
+}
+.quote-block {
+  grid-column: 1 / -1;
+  border-right: 3px solid var(--border);
+  padding: 8px 18px 8px 0;
+  font-size: 14px;
+  color: var(--text-light);
+  font-style: italic;
+  font-weight: 300;
+}
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <h1>5 פרסונות נשים — פריזמה פיננסית</h1>
+  <p>נשים 35–50 · שכירות ועצמאיות · איפה הן, מתי הן פתוחות, מה כואב להן, ולמה הן יבחרו דווקא בך</p>
+</div>
+
+<!-- ===== PERSONA 01 ===== -->
+<div class="persona-card">
+  <div class="pnum">פרסונה 01</div>
+  <div class="grid">
+
+    <div class="block">
+      <div class="block-label">פרופיל</div>
+      <div class="block-content">
+        <ul>
+          <li>גיל 35–42 · שכירה</li>
+          <li>10–15K ₪ בחודש</li>
+          <li>בזוגיות + ילדים</li>
+          <li>הכסף מנוהל ״ביחד״ אבל בפועל בן הזוג מוביל</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">יחס לכסף</div>
+      <div class="block-content">
+        <ul>
+          <li>לא נגד — פשוט אף פעם לא התחילה</li>
+          <li>מרגישה שזה ״לא השטח שלה״</li>
+          <li>לא יודעת מאיפה מתחילים</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">הבעיה + החסם</div>
+      <div class="block-content">
+        אין לה נקודת כניסה. לא חוסר עניין — אף אחד פשוט לא דיבר איתה בגובה העיניים. ״אני לא יודעת מספיק כדי להתחיל לשאול שאלות.״
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">החלום + למה דווקא את</div>
+      <div class="block-content">
+        להבין מה קורה עם הכסף שלה, לא להיות תלויה. תבחר בך כי סוף סוף מישהי מדברת אליה בלי להתנשא ובלי למכור — ומבינה את הפחד כי הרגישה אותו בעצמה.
+      </div>
+    </div>
+
+    <div class="block full">
+      <div class="block-label">איפה ומתי</div>
+      <div class="block-content">
+        <div class="tags">
+          <span class="tag">אינסטגרם — סטוריז ורילס</span>
+          <span class="tag">קבוצות פייסבוק של אמהות</span>
+          <span class="tag">פודקאסטים ברקע</span>
+          <span class="tag">ווטסאפ — קבוצות הורים</span>
+        </div>
+        <div style="margin-top:10px; font-size:13px; color:#6B6560;">
+          ערב אחרי שהילדים ישנים · ימי שישי בבוקר · תחילת חודש כשרואים חיוב · ינואר / אחרי חגים
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      ״אני יודעת שאני צריכה להתעסק עם זה, אני פשוט לא יודעת מאיפה מתחילים ואין לי כוח ללמוד לבד.״
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PERSONA 02 ===== -->
+<div class="persona-card">
+  <div class="pnum">פרסונה 02</div>
+  <div class="grid">
+
+    <div class="block">
+      <div class="block-label">פרופיל</div>
+      <div class="block-content">
+        <ul>
+          <li>גיל 38–50 · שכירה ותיקה / עצמאית</li>
+          <li>12–17K ₪ בחודש</li>
+          <li>בזוגיות או גרושה</li>
+          <li>ניסיון קודם עם סוכן ביטוח / יועץ שאכזב</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">יחס לכסף</div>
+      <div class="block-content">
+        <ul>
+          <li>מבינה שזה חשוב — לא סומכת על ״אנשי כסף״</li>
+          <li>חושבת שכולם רוצים למכור לה משהו</li>
+          <li>חוסר אמון > חוסר ידע</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">הבעיה + החסם</div>
+      <div class="block-content">
+        ניסתה פעם ונכוותה. עכשיו היא לבד עם הכסף ולא סומכת על אף אחד — וזה עולה לה. ״כולם רוצים למכור לי משהו.״
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">החלום + למה דווקא את</div>
+      <div class="block-content">
+        למצוא מישהי שאפשר לסמוך עליה, שלא מנסה למכור. תבחר בך כי את באה ממקום של ״גם אני הרגשתי ככה.״ את שקופה — וזה בדיוק מה שהיא צריכה.
+      </div>
+    </div>
+
+    <div class="block full">
+      <div class="block-label">איפה ומתי</div>
+      <div class="block-content">
+        <div class="tags">
+          <span class="tag">פוסטים ארוכים ומעמיקים</span>
+          <span class="tag">טוקבקים — קוראת לפני שנכנסת</span>
+          <span class="tag">לינקדאין</span>
+          <span class="tag">פודקאסטים ביקורתיים</span>
+          <span class="tag">ווטסאפ — שיתוף מחברה</span>
+        </div>
+        <div style="margin-top:10px; font-size:13px; color:#6B6560;">
+          כשמגלים לה שהיא משלמת יותר מדי · סוף שנה פיננסית · המלצה אותנטית מחברה — לא פרסומת
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      ״הפעם האחרונה שדיברתי עם יועץ הוא מכר לי ביטוח שאני לא צריכה. אז תודה, אני אסתדר.״
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PERSONA 03 ===== -->
+<div class="persona-card">
+  <div class="pnum">פרסונה 03</div>
+  <div class="grid">
+
+    <div class="block">
+      <div class="block-label">פרופיל</div>
+      <div class="block-content">
+        <ul>
+          <li>גיל 35–45 · שכירה / מנהלת ביניים</li>
+          <li>13–17K ₪ בחודש</li>
+          <li>בזוגיות עם ילדים</li>
+          <li>קוראת הרבה, שומרת פוסטים — לא מיישמת</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">יחס לכסף</div>
+      <div class="block-content">
+        <ul>
+          <li>צרכה תוכן, שומרת ״לאחר כך״</li>
+          <li>מפחדת לטעות יותר מלא לעשות כלום</li>
+          <li>פרפקציוניסטית — רוצה להבין הכל לפני שמתחילה</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">הבעיה + החסם</div>
+      <div class="block-content">
+        יש לה ידע חלקי שגורם לשיתוק. רוצה לעשות אבל מפחדת לטעות — ואין מי שיגיד לה ״זה מספיק טוב.״ ״מה אם אני עושה טעות?״
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">החלום + למה דווקא את</div>
+      <div class="block-content">
+        להפסיק להתבשל עם עצמה ולעשות את הצעד הראשון. תבחר בך כי את לא באה עם עוד מידע — את באה עם ליווי ורשות להתחיל מ-good enough.
+      </div>
+    </div>
+
+    <div class="block full">
+      <div class="block-label">איפה ומתי</div>
+      <div class="block-content">
+        <div class="tags">
+          <span class="tag">אינסטגרם — אוספים שמורים</span>
+          <span class="tag">ניוזלטרים</span>
+          <span class="tag">וובינרים — נרשמת, לא תמיד מגיעה</span>
+          <span class="tag">קבוצות פייסבוק נשים + כסף</span>
+          <span class="tag">סדנאות hands-on</span>
+        </div>
+        <div style="margin-top:10px; font-size:13px; color:#6B6560;">
+          כש-deadline מתקרב (מס, משכנתא) · כשחברה עשתה צעד ראשון · כשמציעים ״רק את זה, רק היום״
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      ״אני שומרת המון תוכן על השקעות, פשוט כל פעם שאני יושבת לעשות משהו אני מרגישה שאני עוד לא מספיק מבינה.״
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PERSONA 04 ===== -->
+<div class="persona-card">
+  <div class="pnum">פרסונה 04</div>
+  <div class="grid">
+
+    <div class="block">
+      <div class="block-label">פרופיל</div>
+      <div class="block-content">
+        <ul>
+          <li>גיל 35–48 · עצמאית / פרילנסרית / בעלת עסק</li>
+          <li>12–20K+ ₪ (משתנה בין חודשים)</li>
+          <li>בזוגיות או לא — הכסף שלה בלבד</li>
+          <li>עסוקה מכדי ״לשבת על זה״</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">יחס לכסף</div>
+      <div class="block-content">
+        <ul>
+          <li>יודעת לייצר כסף — לא יודעת לנהל אותו</li>
+          <li>חודש טוב מכסה חודש רע</li>
+          <li>אין תכנון ארוך טווח — רק כיבוי שריפות</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">הבעיה + החסם</div>
+      <div class="block-content">
+        מייצרת כסף אבל הוא נעלם — אין מערכת, אין תמונה כוללת. ניהול כסף נתפס כמשהו שדורש עצירה מוחלטת, אז זה נדחה. ״אין לי זמן לזה עכשיו.״
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">החלום + למה דווקא את</div>
+      <div class="block-content">
+        להרגיש שהעבודה הקשה באמת בונה משהו, שהכסף עובד בשבילה. תבחר בך כי את מדברת בשפה שלה ולא שופטת — את מפרקת את זה איתה, לא במקומה.
+      </div>
+    </div>
+
+    <div class="block full">
+      <div class="block-label">איפה ומתי</div>
+      <div class="block-content">
+        <div class="tags">
+          <span class="tag">אינסטגרם — עסקים ומנהיגות</span>
+          <span class="tag">לינקדאין</span>
+          <span class="tag">פודקאסטים יזמות ועסקים</span>
+          <span class="tag">קהילות עצמאיות</span>
+          <span class="tag">כנסים / מיטאפים</span>
+        </div>
+        <div style="margin-top:10px; font-size:13px; color:#6B6560;">
+          סוף רבעון / שנת מס · חודש חלש · הרגע שבו חושבת ״לאן הכסף הולך?״ — חלון של 48 שעות
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      ״אני מכניסה 20 אלף בחודש טוב ועדיין מגיעה לסוף החודש בלי שקל. אני לא עוצרת מספיק כדי לטפל בזה.״
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== PERSONA 05 ===== -->
+<div class="persona-card">
+  <div class="pnum">פרסונה 05</div>
+  <div class="grid">
+
+    <div class="block">
+      <div class="block-label">פרופיל</div>
+      <div class="block-content">
+        <ul>
+          <li>גיל 35–50 · שכירה / עצמאית, קריירה יציבה</li>
+          <li>12–18K ₪ בחודש</li>
+          <li>גרושה 3+ שנים, ילדים בגדלות</li>
+          <li>עברה את השוק — עכשיו רוצה לבנות נכון</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">יחס לכסף</div>
+      <div class="block-content">
+        <ul>
+          <li>הגירושין היו טריגר לעצמאות פיננסית</li>
+          <li>כבר מנהלת לבד — לא בטוחה שממקסמת</li>
+          <li>מוכנה ללמוד, מחפשת את הצעד הבא</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">הבעיה + החסם</div>
+      <div class="block-content">
+        מסתדרת, אבל לא ממקסמת. יש כסף פנוי ולא יודעת מה לעשות איתו. תוכן בסיסי כבר לא מדבר אליה, מתקדם מדי מרתיע. ״אני מסתדרת, אבל האם אני יכולה יותר?״
+      </div>
+    </div>
+
+    <div class="block">
+      <div class="block-label">החלום + למה דווקא את</div>
+      <div class="block-content">
+        לדעת שהכסף שלה עובד בשבילה — לא רק שורדת אלא בונה עתיד. תבחר בך כי את מציעה את ה-next level בלי להתנשא, ומבינה שהיא צריכה כיוון, לא מוטיבציה.
+      </div>
+    </div>
+
+    <div class="block full">
+      <div class="block-label">איפה ומתי</div>
+      <div class="block-content">
+        <div class="tags">
+          <span class="tag">לינקדאין</span>
+          <span class="tag">ניוזלטרים פיננסיים</span>
+          <span class="tag">פודקאסטים כלכלה אישית</span>
+          <span class="tag">אינסטגרם — יוצרות תוכן פיננסי</span>
+          <span class="tag">קורסים וסדנאות בתשלום</span>
+        </div>
+        <div style="margin-top:10px; font-size:13px; color:#6B6560;">
+          כשיש כסף פנוי · כשהילדים גדלים · כשחברות משקיעות · תחילת שנה / אחרי בונוס
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      ״אחרי הגירושין למדתי לנהל תקציב, סגרתי חובות, ועכשיו יש כסף פנוי. מה הצעד הבא?״
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
